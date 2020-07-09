@@ -1,0 +1,15 @@
+server:
+  port: 8099
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+zuul:
+  host:
+    connect-timeout-millis: 1000
+    socket-timeout-millis: 1000
+  routes:
+    crud:
+      path: /micro-crud/**
+      url: http://localhost:8080
